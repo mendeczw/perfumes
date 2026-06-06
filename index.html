@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Allaf-Bufar | Perfumería</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">∞</span>
+        <div>
+          <h1>Allaf-Bufar</h1>
+          <p>Perfumería · San José Centro</p>
+        </div>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="buscar" placeholder="Buscar producto..." />
+      </div>
+
+      <button class="cart-btn" id="btnCarrito">
+        🛒 <span id="contadorCarrito">0</span>
+      </button>
+    </header>
+
+    <main class="contenedor">
+      <section class="hero">
+        <h2>Fragancias elegantes para cada ocasión</h2>
+        <p>Compra fácil desde la web y envía tu pedido directo por WhatsApp.</p>
+      </section>
+
+      <section class="categorias">
+        <button class="categoria activa" data-categoria="todos">
+          Ver todos
+        </button>
+        <button class="categoria" data-categoria="hombre">Hombre</button>
+        <button class="categoria" data-categoria="mujer">Mujer</button>
+        <button class="categoria" data-categoria="unisex">Unisex</button>
+      </section>
+
+      <section class="grid-productos" id="listaProductos"></section>
+    </main>
+
+    <div class="modal" id="modalProducto">
+      <div class="modal-contenido">
+        <button class="cerrar" id="cerrarModal">×</button>
+        <img id="modalImg" src="" alt="Producto" />
+        <div class="modal-info">
+          <h3 id="modalNombre"></h3>
+          <p id="modalDescripcion"></p>
+          <strong id="modalPrecio"></strong>
+          <div class="cantidad-box">
+            <button id="menosModal">−</button>
+            <input type="number" id="cantidadModal" value="1" min="1" />
+            <button id="masModal">+</button>
+          </div>
+          <button class="btn-principal" id="agregarModal">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="carrito" id="carritoPanel">
+      <div class="carrito-header">
+        <button id="cerrarCarrito">←</button>
+        <h2>Carrito de compras</h2>
+      </div>
+      <button class="vaciar" id="vaciarCarrito">Vaciar carrito</button>
+      <div id="itemsCarrito"></div>
+      <div class="carrito-footer">
+        <button class="btn-principal" id="btnComprar">
+          <span id="totalItems">0</span> Hacer pedido
+          <strong id="totalCarrito">₡0</strong> ›
+        </button>
+      </div>
+    </aside>
+
+    <aside class="checkout" id="checkoutPanel">
+      <div class="carrito-header">
+        <button id="volverCarrito">←</button>
+        <h2>Datos de contacto</h2>
+      </div>
+
+      <form id="formPedido" class="formulario">
+        <p>Selecciona cómo quieres recibir tu pedido</p>
+        <label class="opcion active">
+          🚚 <span>Domicilio</span>
+          <input type="radio" name="entrega" value="Domicilio" checked />
+        </label>
+
+        <label>Nombre *</label>
+        <input type="text" id="nombreCliente" required />
+
+        <label>Celular *</label>
+        <input type="tel" id="celularCliente" required />
+
+        <label>Dirección *</label>
+        <input
+          type="text"
+          id="direccionCliente"
+          placeholder="Escribe tu dirección"
+          required
+        />
+
+        <label>Comentarios de la orden</label>
+        <textarea id="comentariosCliente" rows="4"></textarea>
+
+        <button class="btn-principal" type="submit">
+          Enviar pedido por WhatsApp
+        </button>
+      </form>
+    </aside>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
