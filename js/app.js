@@ -1,4 +1,4 @@
-const WHATSAPP = '50685369305';
+const WHATSAPP = '50660224488';
 
 const productos = [
   {id:1,nombre:'Perfume Allaf Gold 100ml',categoria:'hombre',precio:18500,img:'img/perfume1.jpg',desc:'Fragancia elegante, intensa y duradera. Ideal para noche, oficina o eventos formales.'},
